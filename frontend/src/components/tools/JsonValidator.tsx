@@ -16,6 +16,15 @@ export const JsonValidator: React.FC = () => {
   const [validation, setValidation] = useState<ValidationResult | null>(null);
   const [isValidating, setIsValidating] = useState(false);
 
+  // SEO meta updates
+  useEffect(() => {
+    document.title = 'JSON Validator - Free Online JSON Syntax Validator | JSON Tools';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Free online JSON validator. Check JSON syntax, validate JSON format, and get detailed error messages. Fast, secure, and easy to use JSON validation tool.');
+    }
+  }, []);
+
   useEffect(() => {
     if (input.trim()) {
       setIsValidating(true);

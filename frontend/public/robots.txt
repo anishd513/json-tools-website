@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://json-tools-website-6998.vercel.app/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

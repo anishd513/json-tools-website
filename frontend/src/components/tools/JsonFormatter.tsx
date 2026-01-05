@@ -16,6 +16,15 @@ export const JsonFormatter: React.FC = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // SEO meta updates
+  useEffect(() => {
+    document.title = 'JSON Formatter - Free Online JSON Pretty Print & Beautifier | JSON Tools';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Free online JSON formatter and beautifier. Pretty print JSON with custom indentation, sort keys alphabetically, and format messy JSON data instantly.');
+    }
+  }, []);
+
   useEffect(() => {
     if (input.trim()) {
       setIsProcessing(true);

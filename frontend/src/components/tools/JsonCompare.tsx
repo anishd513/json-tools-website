@@ -17,6 +17,15 @@ export const JsonCompare: React.FC = () => {
   const [isComparing, setIsComparing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // SEO meta updates
+  useEffect(() => {
+    document.title = 'JSON Compare - Free Online JSON Diff Tool & Comparator | JSON Tools';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Free online JSON comparison tool. Compare two JSON objects, find differences, and visualize changes with syntax highlighting and detailed diff reports.');
+    }
+  }, []);
+
   useEffect(() => {
     if (leftJson.trim() && rightJson.trim()) {
       setIsComparing(true);
